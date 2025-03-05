@@ -63,6 +63,8 @@ public class NameService {
 	     */
 	    public void addFemaleFirstName(String name){
 			//TODO:
+			if (femaleFirstNames.contains(name))
+				throw new DuplicateNameException("List already contains name");
 	    	femaleFirstNames.add(name);
 	    	CSVReader_Writer.saveFemaleNames(femaleFirstNames);
 	    		
@@ -76,6 +78,8 @@ public class NameService {
 	     */
 	    public void addMaleFirstName(String name){
 			//TODO:
+			if (maleFirstNames.contains(name))
+				throw new DuplicateNameException("List already contains name");
 	    	maleFirstNames.add(name);
 	        CSVReader_Writer.saveMaleNames(maleFirstNames);
 	    }
@@ -88,6 +92,8 @@ public class NameService {
 	     */
 	    public void addLastName(String lastName){
 			//TODO:
+			if (lastNames.contains(lastName))
+				throw new DuplicateNameException("List already contains name");
 	    	lastNames.add(lastName);
 	        CSVReader_Writer.saveLastNames(lastNames);
 	    }
